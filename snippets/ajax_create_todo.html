@@ -1,0 +1,16 @@
+<script>
+    const todo = {
+        // Add todo contents here
+        ...
+    };
+    $.ajax({
+        "url": "<create_todo_url>", // replace url
+        "method": "POST",
+        "headers": {
+            "content-type": "application/json"
+        },
+        "data": JSON.stringify(todo)
+    }).done(function (response) {
+        alert(`response from server: ${JSON.stringify(response)}`);
+    });
+</script>

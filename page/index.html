@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+</head>
+
+<body>
+    <span id="response">Loading...</span>
+
+    <script>
+        $.get('<hello_world_url>', function (response) { // replace url
+            document.getElementById('response').innerHTML = response;
+        });
+    </script>
+
+    <script>
+        const todo = {
+            // Add todo contents here
+            ...
+        };
+        $.ajax({
+            "url": "<create_todo_url>", // replace url
+            "method": "POST",
+            "headers": {
+                "content-type": "application/json"
+            },
+            "data": JSON.stringify(todo)
+        }).done(function (response) {
+            alert(`response from server: ${JSON.stringify(response)}`);
+        });
+    </script>
+</body>
+
+</html>
